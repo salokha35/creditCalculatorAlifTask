@@ -14,4 +14,4 @@ But to improve it could be done (if there is additional time):
 
 **P.s. For a full verification of SMS, please write to me so that I add your number to the list of verification numbers**
 
-My telegram: t.me/solievsalah
+My telegram: [solievsalah](https://t.me/solievsalah)
