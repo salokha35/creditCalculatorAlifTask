@@ -45,13 +45,13 @@ func CategoryDistributions(category int, amount float64, duration int, phone str
 	switch category {
 	case 1:
 		calculatedResult := calculate.Phones(amount, duration)
-		println(int(calculatedResult))
+		SendMessageToPhoneNumber(calculatedResult, amount, duration, phone)
 	case 2:
 		calculatedResult := calculate.Computers(amount, duration)
-		println(int(calculatedResult))
+		SendMessageToPhoneNumber(calculatedResult, amount, duration, phone)
 	case 3:
 		calculatedResult := calculate.Tvs(amount, duration)
-		println(int(calculatedResult))
+		SendMessageToPhoneNumber(calculatedResult, amount, duration, phone)
 	}
 }
 
