@@ -1,6 +1,7 @@
 package Interaction
 
 import (
+	calculate "creditCalculatorAlifTask/pkg/calculator"
 	"fmt"
 )
 
@@ -43,60 +44,14 @@ func InputData() {
 func CategoryDistributions(category int, amount float64, duration int, phone string) {
 	switch category {
 	case 1:
-		calculatedResult := Phones(amount, duration)
+		calculatedResult := calculate.Phones(amount, duration)
 		println(int(calculatedResult))
 	case 2:
-		calculatedResult := Computers(amount, duration)
+		calculatedResult := calculate.Computers(amount, duration)
 		println(int(calculatedResult))
 	case 3:
-		calculatedResult := Tvs(amount, duration)
+		calculatedResult := calculate.Tvs(amount, duration)
 		println(int(calculatedResult))
-	}
-}
-
-func Computers(amount float64, duration int) float64 {
-
-	switch duration {
-	case 3:
-		return (amount*(1*4))/100 + amount
-	case 6:
-		return (amount*(2*4))/100 + amount
-	case 9:
-		return (amount*(3*4))/100 + amount
-	case 12:
-		return (amount*(4*4))/100 + amount
-	default:
-		return 0
-	}
-}
-func Phones(amount float64, duration int) float64 {
-	switch duration {
-	case 3:
-		return (amount*(1*3))/100 + amount
-	case 6:
-		return (amount*(1*3))/100 + amount
-	case 9:
-		return (amount*(1*3))/100 + amount
-	default:
-		return 0
-	}
-
-}
-
-func Tvs(amount float64, duration int) float64 {
-	switch duration {
-	case 3:
-		return (amount*(1*5))/100 + amount
-	case 6:
-		return (amount*(2*5))/100 + amount
-	case 9:
-		return (amount*(3*5))/100 + amount
-	case 12:
-		return (amount*(4*5))/100 + amount
-	case 18:
-		return (amount*(5*5))/100 + amount
-	default:
-		return 0
 	}
 }
 
