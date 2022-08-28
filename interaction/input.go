@@ -22,20 +22,22 @@ func InputData() {
 	fmt.Scan(&amount)
 
 	if amount <= 0 {
-		fmt.Println("Введите правильную сумму, сумма не может быть меньше или равно 0.")
+		fmt.Println("Введите правильную сумму,сумма должна быть больше 0.")
 		return
 	}
-	//So, before last step we get phone number and validate too
-	fmt.Println("Введите номер телефона (бз кода страны и номер телефона) 992********* ")
+
+	//So,before last step is asking duration of request
+	fmt.Println("Введите срок кредита.")
+	fmt.Scan(&duration)
+
+	//The last step we get phone number and validate too
+	fmt.Println("Введите номер телефона (без кода страны и номер телефона) 992********* ")
 	fmt.Scan(&phone)
 
 	if len(phone) != 9 {
 		fmt.Println("Неверный номер телефона")
 		return
 	}
-	//The last step is asking duration of request
-	fmt.Println("Введите срок кредита. Для вашего удобства вывели список допустимых месяцев для оформления кредита.")
-	fmt.Scan(&duration)
 
 	CategoryDistributions(category, amount, duration, phone)
 
@@ -54,16 +56,3 @@ func CategoryDistributions(category int, amount float64, duration int, phone str
 		SendMessageToPhoneNumber(calculatedResult, amount, duration, phone)
 	}
 }
-
-// func getInput() (string, error) {
-// 	fmt.Print("Введите номер категории: ")
-
-// 	userInput, err := reader.ReadString('\n')
-// 	if err != nil {
-// 		return "", err
-// 	}
-
-// 	userInput = strings.Replace(userInput, "\n", "", -1)
-
-// 	return userInput, nil
-// }
